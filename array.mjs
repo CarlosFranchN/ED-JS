@@ -45,28 +45,21 @@ Array.prototype.removePosN = function (value) {
   }
 }
 
-numbs.push(11)
-console.log(...numbs)
-numbs.push(12)
-console.log(...numbs)
-numbs.push(13)
-console.log(...numbs)
-numbs.push(14)
-console.log(...numbs)
-numbs.insertFirstPos(10)
+Array.prototype.inverter = function () {
+  let aux
+  let length = this.length - 1
 
-console.log(...numbs)
-numbs.insertNumb(15)
+  for (let i = 0; i <= this.length / 2; i++) {
+    aux = this[i]
 
-console.log(...numbs)
-numbs.insertNumb(16)
-console.log(...numbs)
-numbs.removeFirstPos()
-console.log(...numbs)
-numbs.removePos()
-console.log(...numbs)
-numbs.removePosN(2)
+    this[i] = this[length - i]
+    this[length - i] = aux
+  }
+}
 
+for (let i = 1; i <= 7; i++) {
+  numbs.insertNumb(i)
+}
 console.log(...numbs)
-numbs.insertNumbPos(12, 1)
+numbs.inverter()
 console.log(...numbs)
